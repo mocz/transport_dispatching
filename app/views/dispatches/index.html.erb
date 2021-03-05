@@ -1,0 +1,66 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Dispatched</h2>
+      <%= column_chart charts_new_dispatches_path %></div>
+    <div class="col">
+      <h2>Received</h2>
+      <%= column_chart charts_new_receiving_path %>
+    </div>
+    <div class="w-100">    
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Dispatch No.</th>
+      <th>Status</th>
+      <th>Description</th>
+      <th>Time of dispatch</th>
+      <th>Time arrived</th>
+      <th>Driver</th>
+      <th>Plantation id</th>
+      <th>Town</th>
+      <th>Barangay</th>
+      <th>Zone</th>
+      <th>Truck No.</th>
+      <th>Km Distance</th>
+      <th>Planter</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dispatches.each do |dispatch| %>
+      <tr>
+        <td><small><%= dispatch.id %></small></td>
+        <td><small><%= dispatch.status %></small></td>
+        <td><small><%= dispatch.description %></small></td>
+        <td><small><%= dispatch.created_at %></small></td>
+        <td><small><%= dispatch.time_arrived %></small></td>
+        <td><small><%= dispatch.driver.name %></small></td>
+        <td><small><%= dispatch.plantation_id %></small></td>
+        <td><small><%= dispatch.plantation.area.town %></small></td>
+        <td><small><%= dispatch.plantation.area.barangay %></small></td>
+        <td><small><%= dispatch.plantation.area.zone %></small></td>
+        <td><small><%= dispatch.driver.truck.name %></small></td>
+        <td><small><%= dispatch.plantation.area.km_distance %></small></td>
+        <td><small><%= dispatch.plantation.planter.name %></small></td>
+        <td><small><%= link_to 'Show', dispatch%></small></td>
+        <td><small><%= link_to 'Edit', edit_dispatch_path(dispatch) %></small></td>
+        <td><small><%= link_to 'Destroy', dispatch, method: :delete, data: { confirm: 'Are you sure?' } %></small></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Dispatch', new_dispatch_path %>
+<br/>
+<%== pagy_bootstrap_nav(@pagy).html_safe %>
+</div>
+

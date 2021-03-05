@@ -1,0 +1,52 @@
+<%= form_with(model: plantation) do |form| %>
+  <% if plantation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plantation.errors.count, "error") %> prohibited this plantation from being saved:</h2>
+
+      <ul>
+        <% plantation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coordinates %>
+    <%= form.text_field :coordinates %>
+  </div>
+
+  <div class="field">
+    <%= form.label :town %>
+    <%= collection_select(:plantation, :area_id, Area.all, :id, :town) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :barangay %>
+    <%= collection_select(:plantation, :area_id, Area.all, :id, :barangay) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zone %>
+    <%= collection_select(:plantation, :area_id, Area.all, :id, :zone) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :planter_id %>
+    <%= collection_select(:plantation, :planter_id, Planter.all, :id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

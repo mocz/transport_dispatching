@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  affiliation: MyString
+  address: MyString
+  date_employed: 2021-03-02
+  contact_no: MyString
+  truck: one
+
+two:
+  name: MyString
+  affiliation: MyString
+  address: MyString
+  date_employed: 2021-03-02
+  contact_no: MyString
+  truck: two

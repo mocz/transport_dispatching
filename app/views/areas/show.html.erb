@@ -1,0 +1,54 @@
+<div class="container" >
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @area.town %>
+</p>
+
+<p>
+  <strong>Barangay:</strong>
+  <%= @area.barangay %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @area.zone %>
+</p>
+
+<p>
+  <strong>Km distance:</strong>
+  <%= @area.km_distance %>
+</p>
+
+<p>
+  <strong>Fuel:</strong>
+  <%= @area.fuel %>
+</p>
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Back', areas_path %>
+</table>
+<br/>
+
+<h2>List of Planters:</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Contact No.</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @area.plantations.each do |plantation| %>
+    <tr>
+      <td><%= link_to plantation.planter.name, planter_path(plantation.planter)%></td>
+      <td><%= plantation.planter.address %></td>
+      <td><%= plantation.planter.contact_no %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+</div>

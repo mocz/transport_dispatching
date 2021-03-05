@@ -1,0 +1,41 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @dispatch.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dispatch.description %>
+</p>
+
+<p>
+  <strong>Time arrived:</strong>
+  <%= @dispatch.time_arrived %>
+</p>
+
+<p>
+  <strong>Driver id:</strong>
+  <%= @dispatch.driver_id %>
+</p>
+
+<p>
+<strong>Driver Name:</strong>
+<%= @dispatch.driver.name %>
+</p>
+
+<p>
+  <strong>Plantation:</strong>
+  <%= @dispatch.plantation_id %>
+</p>
+
+<p>
+  <strong>Planter:</strong>
+  <%= @dispatch.plantation.planter.name %>
+</p>
+
+<%= link_to 'Edit', edit_dispatch_path(@dispatch) %> |
+<%= link_to 'Back', dispatches_path %>
+</div>
