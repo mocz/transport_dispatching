@@ -2,7 +2,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Drivers</h1>
-
+<div class="container">
+<%= link_to 'New Driver', new_driver_path,:class => "button btn btn-success"   %>
+</div>
+<br/>
 <table class="table table-hover table-bordered">
   <thead>
     <tr>
@@ -32,8 +35,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Driver', new_driver_path,:class => "button btn btn-success"   %>
 </div>

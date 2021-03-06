@@ -1,8 +1,10 @@
-<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Plantations</h1>
-
+<div>
+<%= link_to 'New Plantation', new_plantation_path,:class => "button btn btn-success"  %>
+</div>
+<br/>
 <table class="table table-hover table-bordered">
   <thead>
     <tr>
@@ -36,6 +38,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Plantation', new_plantation_path %>
-</div>

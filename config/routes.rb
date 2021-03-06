@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :plantations
   resources :planters
   resources :areas
+  resources :home
   root "home#index"
   namespace :charts do
     get "new-dispatches"

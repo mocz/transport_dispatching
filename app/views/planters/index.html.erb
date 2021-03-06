@@ -2,7 +2,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Planters</h1>
-
+<div class="container">
+<%= link_to 'New Planter', new_planter_path,:class => "button btn btn-success"  %>
+</div>
+<br/>
 <table class="table table-hover table-bordered">
   <thead>
     <tr>
@@ -21,13 +24,11 @@
         <td><%= planter.contact_no %></td>
         <td><%= link_to 'Show', planter %></td>
         <td><%= link_to 'Edit', edit_planter_path(planter) %></td>
-        <td><%= link_to 'Destroy', data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', planter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Planter', new_planter_path,:class => "button btn btn-success"  %>
 </div>

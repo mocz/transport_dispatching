@@ -1,69 +1,86 @@
-<div class="container">
+<body>
 <p id="notice"><%= notice %></p>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h2>Dispatched</h2>
-      <%= column_chart charts_new_dispatches_path %></div>
-    <div class="col">
-      <h2>Received</h2>
-      <%= column_chart charts_new_receiving_path %>
-    </div>
-    <div class="w-100">    
-    </div>
-    <div class="col"></div>
-    <div class="col"></div>
-  </div>
-</div>
-<div class="container-fluid">
-<br/>
-<%= link_to 'New Dispatch', new_dispatch_path,:class => "button btn btn-success"  %>
-</div>
-<br/>
-<table class="table table-hover table-bordered">
-  <thead>
-    <tr>
-      <th>Dispatch No.</th>
-      <th>Status</th>
-      <th>Description</th>
-      <th>Time of dispatch</th>
-      <th>Time arrived</th>
-      <th>Driver</th>
-      <th>Plantation id</th>
-      <th>Town</th>
-      <th>Barangay</th>
-      <th>Zone</th>
-      <th>Truck No.</th>
-      <th>Km Distance</th>
-      <th>Planter</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Summary</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+            
+          </div>
+       
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h4>Dispatched</h4>
+              <%= column_chart charts_new_dispatches_path %></div>
+            <div class="col">
+              <h4>Received</h4>
+              <%= column_chart charts_new_receiving_path %>
+            </div>
+            <div class="w-100">    
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+        <br/>
+        <%= link_to 'New Dispatch', new_dispatch_path,:class => "button btn btn-success"  %>
+        </div>
+        <br/>
+        <table class="table table-hover table-bordered table-sm">
+          <thead>
+            <tr>
+              <th>Dispatch No.</th>
+              <th>Status</th>
+              <th>Description</th>
+              <th>Time of dispatch</th>
+              <th>Time arrived</th>
+              <th>Driver</th>
+              <th>Plantation id</th>
+              <th>Town</th>
+              <th>Barangay</th>
+              <th>Zone</th>
+              <th>Truck No.</th>
+              <th>Km Distance</th>
+              <th>Planter</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @dispatches.each do |dispatch| %>
-      <tr>
-        <td><small><%= dispatch.id %></small></td>
-        <td><small><%= dispatch.status %></small></td>
-        <td><small><%= dispatch.description %></small></td>
-        <td><small><%= dispatch.created_at %></small></td>
-        <td><small><%= dispatch.time_arrived %></small></td>
-        <td><small><%= dispatch.driver.name %></small></td>
-        <td><small><%= dispatch.plantation_id %></small></td>
-        <td><small><%= dispatch.plantation.area.town %></small></td>
-        <td><small><%= dispatch.plantation.area.barangay %></small></td>
-        <td><small><%= dispatch.plantation.area.zone %></small></td>
-        <td><small><%= dispatch.driver.truck.name %></small></td>
-        <td><small><%= dispatch.plantation.area.km_distance %></small></td>
-        <td><small><%= dispatch.plantation.planter.name %></small></td>
-        <td><small><%= link_to 'Show', dispatch%></small></td>
-        <td><small><%= link_to 'Edit', edit_dispatch_path(dispatch) %></small></td>
-        <td><small><%= link_to 'Destroy', dispatch, method: :delete, data: { confirm: 'Are you sure?' } %></small></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br/>
-<%== pagy_bootstrap_nav(@pagy).html_safe %>
-</div>
+          <tbody>
+            <% @dispatches.each do |dispatch| %>
+              <tr>
+                <td><small><%= dispatch.id %></small></td>
+                <td><small><%= dispatch.status %></small></td>
+                <td><small><%= dispatch.description %></small></td>
+                <td><small><%= dispatch.created_at %></small></td>
+                <td><small><%= dispatch.time_arrived %></small></td>
+                <td><small><%= dispatch.driver.name %></small></td>
+                <td><small><%= dispatch.plantation_id %></small></td>
+                <td><small><%= dispatch.plantation.area.town %></small></td>
+                <td><small><%= dispatch.plantation.area.barangay %></small></td>
+                <td><small><%= dispatch.plantation.area.zone %></small></td>
+                <td><small><%= dispatch.driver.truck.name %></small></td>
+                <td><small><%= dispatch.plantation.area.km_distance %></small></td>
+                <td><small><%= dispatch.plantation.planter.name %></small></td>
+                <td><small><%= link_to 'Show', dispatch%></small></td>
+                <td><small><%= link_to 'Edit', edit_dispatch_path(dispatch) %></small></td>
+                <td><small><%= link_to 'Destroy', dispatch, method: :delete, data: { confirm: 'Are you sure?' } %></small></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br/>
+        <%== pagy_bootstrap_nav(@pagy).html_safe %>
+        </div>
+</body>
 
