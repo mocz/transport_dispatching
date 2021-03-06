@@ -1,9 +1,19 @@
+<body>
+<p id="notice"><%= notice %></p>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Trucks</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            </div>
+            
+          </div>
 <div class="container">
 <p id="notice"><%= notice %></p>
-
-<h1>Trucks</h1>
-
-<table class="table table-hover table-bordered">  
+<table class="table table-hover table-bordered table-sm">  
   <thead>
     <tr>
       <th>Name</th>
@@ -31,3 +41,4 @@
 
 <%= link_to 'New Truck', new_truck_path,:class => "button btn btn-success"  %>
 </div>
+</body>
