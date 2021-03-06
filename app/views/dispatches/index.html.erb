@@ -19,10 +19,10 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <h4>Dispatched</h4>
+              <h4>Dispatched Trucks</h4>
               <%= column_chart charts_new_dispatches_path %></div>
             <div class="col">
-              <h4>Received</h4>
+              <h4>Received Trucks</h4>
               <%= column_chart charts_new_receiving_path %>
             </div>
             <div class="w-100">    
@@ -50,9 +50,9 @@
               <th>Barangay</th>
               <th>Zone</th>
               <th>Truck No.</th>
-              <th>Km Distance</th>
+              <th>Km</th>
               <th>Planter</th>
-              <th colspan="4"></th>
+              <th>Fuel</th>
             </tr>
           </thead>
 
@@ -72,6 +72,7 @@
                 <td><small><%= dispatch.driver.truck.name %></small></td>
                 <td><small><%= dispatch.plantation.area.km_distance %></small></td>
                 <td><small><%= dispatch.plantation.planter.name %></small></td>
+                <td><small><%= dispatch.plantation.area.fuel%></small></td>
                 <td><small><%= link_to 'Show', dispatch%></small></td>
                 <td><small><%= link_to 'Edit', edit_dispatch_path(dispatch) %></small></td>
                 <td><small><%= link_to 'Destroy', dispatch, method: :delete, data: { confirm: 'Are you sure?' } %></small></td>
