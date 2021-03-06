@@ -71,7 +71,7 @@
                 <td><small><%= dispatch.plantation.area.zone %></small></td>
                 <td><small><%= dispatch.driver.truck.name %></small></td>
                 <td><small><%= dispatch.plantation.area.km_distance %></small></td>
-                <td><small><%= dispatch.plantation.planter.name %></small></td>
+                <td><small><%= link_to dispatch.plantation.planter.name, planter_path(dispatch.plantation.planter)%></small></td>
                 <td><small><%= dispatch.plantation.area.fuel%></small></td>
                 <td><small><%= link_to 'Show', dispatch%></small></td>
                 <td><small><%= link_to 'Edit', edit_dispatch_path(dispatch) %></small></td>
