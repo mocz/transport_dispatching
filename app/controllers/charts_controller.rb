@@ -10,4 +10,12 @@ class ChartsController < ApplicationController
     def new_plantation
         render json: Area.group(:town).count
     end
+    def new_overview
+    render json:
+        [
+            {name: "Dispatched", data: Dispatch. group_by_day_of_week(:created_at, format: "%a").count},
+            {name: "Received", data: Dispatch.group_by_day_of_week(:time_arrived, format: "%a").count}
+        ]
+    end
+
 end

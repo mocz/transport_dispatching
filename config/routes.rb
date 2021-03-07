@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "new-dispatches"
     get "new-receiving"
     get "new-plantation"
+    get "new-overview"
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
